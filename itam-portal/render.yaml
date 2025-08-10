@@ -1,0 +1,31 @@
+services:
+  - type: web
+    name: itam-backend
+    env: node
+    plan: free
+    rootDir: backend
+    buildCommand: npm install
+    startCommand: node src/server.js
+    envVars:
+      - key: PORT
+        value: 10000
+      - key: MONGODB_URI
+        sync: false
+      - key: JWT_SECRET
+        sync: false
+      - key: ADMIN_NAME
+        value: Admin
+      - key: ADMIN_EMAIL
+        value: admin@example.com
+      - key: ADMIN_PASSWORD
+        value: admin123
+      - key: CORS_ORIGIN
+        value: https://itam-frontend.onrender.com
+  - type: static_site
+    name: itam-frontend
+    rootDir: frontend
+    buildCommand: npm install && npm run build
+    publishPath: dist
+    envVars:
+      - key: VITE_API_URL
+        value: https://itam-backend.onrender.com/api

@@ -1,0 +1,4 @@
+Asset Type,Assigned Employee Name,Spare,Branch Name,Zone Name,Designation,Contact Number,Role,User ID,WO ID
+Laptop,John Doe,false,NYC,East,Engineer,1234567890,Developer,U123,WO-001
+Desktop,,true,LA,West,,,"",,WO-002
+Laptop,Jane Smith,false,Chicago,North,Manager,5552221111,Lead,U456,WO-003
